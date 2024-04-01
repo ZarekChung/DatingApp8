@@ -15,6 +15,8 @@ internal class Program
         {
             opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
         });
+
+        builder.Services.AddCors();
         var app = builder.Build();
 
 
@@ -22,6 +24,7 @@ internal class Program
 
         app.UseAuthorization();
 
+        app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
         app.MapControllers();
 
         app.Run();
