@@ -9,7 +9,8 @@
     }
   },
   "profiles": {
-    "http": {
+    "api": {
+      "hotReloadEnabled": false,
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": false,
@@ -17,6 +18,6 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
-    },
+    }
   }
 }
